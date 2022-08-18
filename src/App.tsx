@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import Header from "./Header/Header";
+import Home from "./Home/Home";
+import About from "./About/About";
+import Extra from "./Extra/Extra";
+import NoMatch from "./NoMatch/NoMatch";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="extra" element={<Extra />} />
+        <Route path="not-found" element={<NoMatch />} />
+        <Route path="*" element={<Navigate to="not-found" replace />} />
+      </Routes>
+      <Outlet />
+    </>
   );
 }
 
