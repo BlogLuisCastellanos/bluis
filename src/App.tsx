@@ -5,7 +5,7 @@ import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 import About from "./About/About";
-import Extra from "./Extra/Extra";
+import Blog from "./Blog/Blog";
 import NoMatch from "./NoMatch/NoMatch";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="extra" element={<Extra />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="not-found" element={<NoMatch />} />
         <Route path="*" element={<Navigate to="not-found" replace />} />
       </Routes>
