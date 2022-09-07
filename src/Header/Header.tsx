@@ -9,8 +9,10 @@ function Header() {
   return (
     <div className="Header">
       <Link to="/">Luis Castellanos</Link>
-      <Link to="/about">About me</Link>
-      <Link to="/extra">Blog</Link>
+      <Link to="/cv">CV</Link>
+      <Link to="/working-papers">Working Papers</Link>
+      <Link to="/publications">Publications</Link>
+      <Link to="/blog">Blog</Link>
     </div>
   );
 }

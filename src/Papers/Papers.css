@@ -1,0 +1,10 @@
+.Home {
+    text-align: center;
+  }
+  
+  .Img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
