@@ -7,18 +7,23 @@ import Home from "./Home/Home";
 import About from "./About/About";
 import Blog from "./Blog/Blog";
 import NoMatch from "./NoMatch/NoMatch";
-import Papers from "./Papers/Papers";
 import Publications from "./Publications/Publications";
 
 function App() {
+  const folders = ["working-papers", "publications"]
   return (
     <>
       <Header />
       <Routes>
         <Route index element={<Home />} />
         <Route path="cv" element={<About />} />
-        <Route path="working-papers" element={<Papers/>} />
-        <Route path="publications" element={<Publications/>} />
+        {folders.map((folder)=>{
+          return <Route
+          key={folder}
+          path={folder}
+          element={<Publications folder={folder} />}
+        />
+        })}
         <Route path="blog/*" element={<Blog />} />
         <Route path="not-found" element={<NoMatch />} />
         <Route path="*" element={<Navigate to="not-found" replace />} />

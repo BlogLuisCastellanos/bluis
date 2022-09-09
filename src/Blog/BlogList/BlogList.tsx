@@ -4,13 +4,15 @@ import BlogCard, { BlogLightEntry } from "./BlogCard/BlogCard";
 
 interface BlogListProps {
   list: BlogLightEntry[];
+  loading: boolean;
 }
 
-function BlogList({ list }: BlogListProps) {
+function BlogList({ list, loading }: BlogListProps) {
   return (
     <div className="Blog">
-      {list.map((entry) => {
-        return <BlogCard entry={entry} />;
+      {loading && <div className="Blog">Cargando</div>}
+      {!loading && list.map((entry) => {
+        return <BlogCard key={entry.title} entry={entry} />;
       })}
     </div>
   );

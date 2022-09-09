@@ -6,8 +6,6 @@ import { BlogLightEntry } from "./BlogList/BlogCard/BlogCard";
 import BlogList from "./BlogList/BlogList";
 import BlogPage from "./BlogPage/BlogPage";
 
-
-
 function Blog() {
   const [loading, setLoading] = useState<boolean>(false);
   const [list, setList] = useState<BlogLightEntry[]>([]);
@@ -23,17 +21,13 @@ function Blog() {
   }, []);
 
   return (
-    <>
-      <Routes>
-        <Route path=":title" element={<BlogPage />} />
-      </Routes>
-      {loading && <div className="Blog">Cargando</div>}
-      {!loading && (
-        <div className="Blog">
-          <BlogList list={list} />
-        </div>
-      )}
-    </>
+    <Routes>
+      <Route path=":title" element={<BlogPage />} />
+      <Route
+        path="/"
+        element={<BlogList list={list} loading={loading} />}
+      />
+    </Routes>
   );
 }
 

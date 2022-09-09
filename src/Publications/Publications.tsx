@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Publications.css";
-import me from "../assets/me.jpeg";
+import PublicationsList from "../shared/PublicationsList/PublicationsList";
+import { listPublications } from "../services/s3";
+import { Publication } from "../shared/PublicationsList/Publication/Publication";
 
 interface PublicationsProps {
-  source: string;
+  folder: string;
 }
 
-function Publications({ source }: PublicationsProps) {
+function Publications({ folder }: PublicationsProps) {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [list, setList] = useState<Publication[]>([]);
+
+  useEffect(() => {
+    const fetchEntries = async () => {
+      setLoading(true);
+      setList(await listPublications(folder));
+      setLoading(false);
+    };
+    fetchEntries();
+  }, [folder]);
+
   return (
     <div>
-      <div className="Home">Hola, mi nombre es Luis Castellanos</div>
-      <div className="Img">
-        <img src={me} alt="Me" />
-      </div>
+      {loading && <div>Cargando</div>}
+      {!loading && <PublicationsList list={list} />}
     </div>
   );
 }

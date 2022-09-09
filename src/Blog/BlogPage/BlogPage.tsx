@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getEntryByTitle } from "../../services/s3";
 import { BlogLightEntry } from "../BlogList/BlogCard/BlogCard";
 import "./BlogPage.css";
+import BlogPageDetail from "./BlogPageDetail/BlogPageDetail";
 
 export interface BlogEntry extends BlogLightEntry {
   background?: string;
@@ -28,7 +29,7 @@ function BlogPage() {
   return (
     <>
       {loading && <div>Cargando</div>}
-      {!loading && entry && <div>{entry.title}</div>}
+      {!loading && entry && <BlogPageDetail entry={entry}/>}
     </>
   );
 }

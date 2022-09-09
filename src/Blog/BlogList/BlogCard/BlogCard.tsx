@@ -5,6 +5,7 @@ export interface BlogLightEntry {
   desc?: string;
   image?: string;
   title: string;
+  date?: Date;
 }
 
 interface BlogCardProps {
@@ -12,7 +13,7 @@ interface BlogCardProps {
 }
 
 function BlogCard({ entry }: BlogCardProps) {
-  return <div>{entry.desc}</div>;
+  return <div>{entry.title}</div>;
 }
 
 export default BlogCard;
