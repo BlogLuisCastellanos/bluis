@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 3;
+  height: 60px;
+  align-items: center;
+}
+
+.mobileHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 3;
+  height: 200px;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobileHeader a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.selected {
+  border-bottom: solid gray;
+}

@@ -12,7 +12,7 @@ import Publications from "./Publications/Publications";
 function App() {
   const folders = ["working-papers", "publications"]
   return (
-    <>
+    <div className="root">
       <Header />
       <Routes>
         <Route index element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path="*" element={<Navigate to="not-found" replace />} />
       </Routes>
       <Outlet />
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  margin: 25px 20px;
+  align-items: center;
+}
+
+.mobileMain {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 25px 20px;
+    align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.mobileImageContainer{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image {
+    float: left;
+    width:  300px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.infoContainer {
+    margin-left: 5%;
+    width: 70%;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.mobileText {
+text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 15px;
+}

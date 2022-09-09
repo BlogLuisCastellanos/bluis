@@ -1,5 +1,5 @@
 import React from "react";
-import "./PublicationsList.css";
+import styles from "./PublicationsList.module.css";
 import PublicationComponent, { Publication } from "./Publication/Publication";
 
 interface PublicationsListProps {
@@ -8,7 +8,7 @@ interface PublicationsListProps {
 
 function Publications({ list }: PublicationsListProps) {
   return (
-    <div className="Blog">
+    <div className={styles.main}>
       {list.map((publication) => {
         return <PublicationComponent key={publication.title} publication={publication}  />;
       })}

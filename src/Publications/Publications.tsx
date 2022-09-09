@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Publications.css";
+import style from "./Publications.module.css";
 import PublicationsList from "../shared/PublicationsList/PublicationsList";
 import { listPublications } from "../services/s3";
 import { Publication } from "../shared/PublicationsList/Publication/Publication";
@@ -23,7 +23,7 @@ function Publications({ folder }: PublicationsProps) {
 
   return (
     <div>
-      {loading && <div>Cargando</div>}
+      {loading && <div className={style.loading}>Cargando</div>}
       {!loading && <PublicationsList list={list} />}
     </div>
   );
